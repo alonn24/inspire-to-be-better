@@ -1,0 +1,4 @@
+.idea/*
+backend/apis/.pytest_cache*
+*.pytest_cache*
+*__pycache__*
