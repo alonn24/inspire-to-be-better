@@ -11,10 +11,18 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
+      // { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
     ]
   },
+  css: [
+    // Load a Node.js module directly (here it's a Sass file)
+    // 'bulma',
+    // CSS file in the project
+    // '@/assets/css/main.css',
+    // SCSS file in the project
+    '@/assets/main.scss'
+  ],
   /*
   ** Modules
   */
@@ -51,6 +59,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.devtool = '#source-map';
     }
   }
 }
