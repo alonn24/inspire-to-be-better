@@ -1,4 +1,9 @@
-.idea/*
-backend/apis/.pytest_cache*
-*.pytest_cache*
-*__pycache__*
+.idea/
+node_modules
+
+# logs
+npm-debug.log
+
+# Auto generated files
+.nuxt
+dist

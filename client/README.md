@@ -1,22 +1,24 @@
 # client-app
 
-> Nuxt.js project
+client app
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+> npm install 
+# or 
+> yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+> npm run dev
 
 # build for production and launch server
-$ npm run build
-$ npm start
+> npm run build
+> npm start
 
 # generate static project
-$ npm run generate
+> npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

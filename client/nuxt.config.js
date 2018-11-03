@@ -16,6 +16,22 @@ module.exports = {
     ]
   },
   /*
+  ** Modules
+  */
+  modules: [
+    '@nuxtjs/proxy',
+  ],
+  proxy: {
+    '/_api': {
+      target: 'http://alonn24.wixsite.com',
+      pathRewrite: {'^/_api' : '/'},
+      changeOrigin: true,
+      logLevel: 'debug'
+    }
+    // Proxies /foo to http://example.com/foo
+    // 'http://alonn24.wixsite.com/provider/_functions/data',
+  },
+  /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
