@@ -1,5 +1,8 @@
 .idea/
 node_modules
+backend/apis/.pytest_cache*
+*.pytest_cache*
+*__pycache__*
 
 # logs
 npm-debug.log
