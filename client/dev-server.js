@@ -1,7 +1,7 @@
-const { Nuxt, Builder } = require('nuxt')
+const fs = require('fs')
 const express = require('express')
+const { Nuxt, Builder } = require('nuxt')
 
-const proxy = require('http-proxy-middleware');
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
@@ -11,31 +11,27 @@ config.dev = !isProd
 const nuxt = new Nuxt(config)
 
 const app = express()
-app.use('/_api', proxy({
-  target: 'http://alonn24.wixsite.com',
-  pathRewrite: {'^/_api' : '/'},
-  changeOrigin: true,
-  logLevel: 'debug'
-}));
 
 // Render every route with Nuxt.js
 app.use(nuxt.render)
 
 // Build only in dev mode with hot-reloading
+// to create cert file run
 if (config.dev) {
+  const https = require('https')
   new Builder(nuxt).build()
-    .then(listen)
+    .then(function () {
+      https.createServer({
+        key: fs.readFileSync('server.key'),
+        cert: fs.readFileSync('server.cert')
+      }, app)
+        .listen(3000, () => console.log(`Server listening on 'https://localhost:${port}'.`))
+    })
     .catch((error) => {
       console.error(error)
       process.exit(1)
     })
 }
 else {
-  listen()
-}
-
-function listen() {
-  // Listen the server
   app.listen(port, '0.0.0.0')
-  console.log('Server listening on `localhost:' + port + '`.')
 }
