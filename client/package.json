@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "ssl": "node dev-server.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
