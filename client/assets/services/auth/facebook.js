@@ -32,7 +32,7 @@ class Facebook {
     });
   }
 
-  login() {
+  async login() {
     return new Promise(resolve => {
       FB.login(response => {
         if (response.status === 'connected') {
@@ -47,7 +47,7 @@ class Facebook {
     });
   }
 
-  details() {
+  async details() {
     return new Promise(resolve => {
       FB.api(this.userId, response => {
           if (response && !response.error) {

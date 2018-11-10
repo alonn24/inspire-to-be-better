@@ -2,7 +2,8 @@ module.exports = {
   env: {
     googleClientId: process.env.NODE_ENV === 'development'?
       '792143907991-f146p30pg93borl6adhh61510llc228h.apps.googleusercontent.com' : // client secret = MoPNm4IO06YL4jqrdcqVrRcE
-      '792143907991-3gbdpllv0ai8c5v30m7or96gu82349l7.apps.googleusercontent.com' // client secret = 1mJzQIgktNQDtUvY2E_-y6R1
+      '792143907991-3gbdpllv0ai8c5v30m7or96gu82349l7.apps.googleusercontent.com', // client secret = 1mJzQIgktNQDtUvY2E_-y6R1
+    githubClientId: '377beab9c455311147c4'  // client secret = 43feb193fcc0a904d3fd573eb94a9f51a016a5ac
   },
   /*
   ** Headers of the page
