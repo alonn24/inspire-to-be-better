@@ -5,8 +5,8 @@
   "author": "alony <alony@wix.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "ssl": "node dev-server.js",
+    "dev": "NODE_ENV=development nuxt",
+    "ssl": "NODE_ENV=development node dev-server.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

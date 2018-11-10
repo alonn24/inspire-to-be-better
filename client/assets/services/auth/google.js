@@ -1,8 +1,7 @@
 if (process.browser) {
-  // client secret = QkOIPxzlY_cJ4V7sMHL0si8r
   gapi.load('auth2', () =>
     gapi.auth2.init({
-      client_id: `792143907991-v6jcpqgvvpncgt14hjv4s65l2gq7s5fk.apps.googleusercontent.com`,
+      client_id: process.env.googleClientId,
       fetch_basic_profile: true
     }));
 }
