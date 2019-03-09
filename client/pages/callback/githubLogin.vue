@@ -3,8 +3,7 @@
 </template>
 <script>
   if (process.browser) {
-    window.onLogin((new URL(document.location)).searchParams.get('code'));
-    window.close();
+    window.socialLoginCode = (new URL(document.location)).searchParams.get('code');
   }
 
   export default {}
