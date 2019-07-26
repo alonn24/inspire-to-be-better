@@ -1,6 +1,7 @@
 .idea/
 node_modules
 backend/apis/.pytest_cache*
+backend/venv
 *.pytest_cache*
 *__pycache__*
 
