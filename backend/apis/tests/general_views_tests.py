@@ -1,6 +1,6 @@
 from rest_framework import status
 from django.urls import reverse
-from backend.apis.tests.base import BaseTest
+from apis.tests.base import BaseTest
 
 
 class TestHelloWorldView(BaseTest):
