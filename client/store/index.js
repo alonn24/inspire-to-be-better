@@ -27,7 +27,7 @@ const createStore = () => {
     }),
     mutations: {
       async fetchSomething(state) {
-        const response = await axios.get('/_api/hello/?format=json');
+        const response = await axios.get('/_api/hello/');
         state.greeting = `hello ${response.data.Hello}!`;
       },
       async socialStatus(state, social) {
