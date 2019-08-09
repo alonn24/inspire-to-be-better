@@ -40,7 +40,7 @@ module.exports = {
   ],
   proxy: {
     '/_api': {
-      target: 'http://alonn24.wixsite.com',
+      target: 'https://inspire-to-be-better-245908.appspot.com',
       pathRewrite: {'^/_api' : '/'},
       changeOrigin: true,
       logLevel: 'debug'
