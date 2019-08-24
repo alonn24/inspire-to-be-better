@@ -22,9 +22,9 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    Object.keys(proxyConfig).forEach(function (context) {
-      server.use(proxyMiddleware(context, proxyConfig[context]))
-    });
+    // Object.keys(proxyConfig).forEach(function (context) {
+    //   server.use(proxyMiddleware(context, proxyConfig[context]))
+    // });
 
     server.use((req, res) => {
       const parsedUrl = parse(req.url, true);

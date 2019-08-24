@@ -6,9 +6,9 @@ ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
 
 # default to port 3000 for node, and 4000 for debug
-ARG PORT=3000
+ARG PORT=$APP_PORT
 ENV PORT $PORT
-EXPOSE $PORT 4000
+EXPOSE $DEBUG_PORT
 
 # install dependencies
 RUN mkdir -p /var/www/app

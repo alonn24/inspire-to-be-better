@@ -1,17 +1,20 @@
 version: '2'
 services:
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
   app:
     build:
       context: ./inspire-front
       dockerfile: Dockerfile
     container_name: inspire-front
-    expose:
-      - "$APP_PORT"
     working_dir: /var/www/app
     volumes:
       - ./inspire-front:/var/www/app
     ports:
-      - "$APP_PORT:$APP_PORT"
+      - "$DEBUG_PORT:$DEBUG_PORT"
     environment:
       - NODE_ENV=$NODE_ENV
       - PORT=$APP_PORT
@@ -26,5 +29,3 @@ services:
      working_dir: /code
      volumes:
        - ./backend:/code
-     ports:
-       - "$API_PORT:$API_PORT"
