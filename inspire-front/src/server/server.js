@@ -12,7 +12,7 @@ const handle = app.getRequestHandler();
 const proxyMiddleware = require('http-proxy-middleware');
 const proxyConfig = {
   '/_api': {
-    target: 'https://inspire-to-be-better-245908.appspot.com',
+    target: 'http://inspire-api:8000',
     pathRewrite: {'^/_api': '/'},
     changeOrigin: true,
   }
