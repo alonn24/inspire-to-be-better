@@ -29,3 +29,18 @@ services:
      working_dir: /code
      volumes:
        - ./backend:/code
+  elastic:
+    restart: always
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.1
+    environment:
+      - discovery.type=single-node
+    container_name: search_elastic
+    volumes:
+      - inspire-elastic-data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+volumes:
+  inspire-elastic-data:
+    driver: local
