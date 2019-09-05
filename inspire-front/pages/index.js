@@ -1,34 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Head from 'next/head'
+import Header from '../src/components/Header'
+import Search from '../src/components/Search'
+import { Provider } from '../src/store'
 
-const fetchData = async () => {
-  const response = await fetch('/_api/hello/')
-  const data = await response.json();
-  return data.Hello;
-}
 const Home = () => {
-  const [title, setTitle] = useState('');
-  useEffect(() => {
-    fetchData().then(setTitle);
-  }, []);
-
-  return <div>
+  return <>
     <Head>
       <title>Inspire to Be Better!</title>
     </Head>
-
-    <div className='hero'>
-      <h1 className='title'>Hello {title}</h1>
-
-    </div>
-    {/*language=CSS*/}
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-    `}</style>
-  </div>
+    <Provider>
+      <Header />
+      <Search />
+    </Provider>
+  </>
 }
 
 export default Home
