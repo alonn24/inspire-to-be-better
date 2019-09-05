@@ -5,8 +5,8 @@ from django.utils import timezone
 class Subscriber(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=40)
-    email = models.EmailField()
-    password = models.CharField(max_length=40)
+    email = models.EmailField(blank=False, null=False)
+    password = models.CharField(max_length=40, blank=False, null=False)
     created = models.DateTimeField(editable=False)
 
     def save(self, *args, **kwargs):

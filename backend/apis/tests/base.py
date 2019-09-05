@@ -12,8 +12,10 @@ class BaseTest:
 
     @pytest.fixture()
     def subscriber(self):
-        return Subscriber.objects.create(first_name="David", last_name="Goggins", email="david@goggins.com")
+        return Subscriber.objects.create(first_name="David", last_name="Goggins", email="david@goggins.com",
+                                         password="nasihi")
 
     @pytest.fixture()
     def subscriber2(self):
-        return Subscriber.objects.create(first_name="Mark", last_name="Whalberg", email="mark@whalberg.com")
+        return Subscriber.objects.create(first_name="Mark", last_name="Whalberg", email="mark@whalberg.com",
+                                         password="nasihi2")
