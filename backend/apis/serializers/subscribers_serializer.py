@@ -7,3 +7,10 @@ class SubscriberSerializer(serializers.ModelSerializer):
         model = Subscriber
         fields = ['id', 'first_name', 'last_name', 'created', 'email', 'password']
         read_only = ['id', 'created']
+
+
+class SubscriberCheckerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscriber
+        fields = ['id', 'first_name', 'last_name', 'created', 'email']
+        read_only = ['id', 'created']

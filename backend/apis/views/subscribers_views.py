@@ -1,7 +1,7 @@
 from rest_framework import generics, status
 
 from apis.models.subscriber import Subscriber
-from apis.serializers.subscribers_serializer import SubscriberSerializer
+from apis.serializers.subscribers_serializer import SubscriberSerializer, SubscriberCheckerSerializer
 from rest_framework.response import Response
 
 
@@ -22,7 +22,7 @@ class SubscriberCheckView(generics.GenericAPIView):
 
         subscriber = Subscriber.objects.filter(email=email, password=password)
         if subscriber:
-            serializer = SubscriberSerializer(data=subscriber)
+            serializer = SubscriberCheckerSerializer(data=subscriber)
             serializer.is_valid()
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
