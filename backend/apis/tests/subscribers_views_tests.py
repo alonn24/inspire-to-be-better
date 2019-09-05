@@ -4,6 +4,7 @@ from rest_framework import status
 from django.urls import reverse
 
 
+# TODO: Complete tests
 class TestSubscribersListCreateView(BaseTest):
     def test_list_no_subscribers(self, client):
         # Given - No users in the DB
@@ -56,8 +57,8 @@ class TestSubscribersListCreateView(BaseTest):
         # Then - A status 201 is returned, one subscriber was created
         assert status.HTTP_201_CREATED == response.status_code
         assert 1 == Subscriber.objects.count()
-        # assert 0 == len(response.data)
 
+        # TODO: Verify the results of the created subscriber
 
     def test_create_already_existing_subscriber(self, client, subscriber):
         pass
