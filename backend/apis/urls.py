@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from apis.views.general_views import hello_world_view
+from apis.apis_urls import APIViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello_world_view, name="hello-world")
+    path('hello/', hello_world_view, name="hello-world"),
+    path('api/v1/', APIViews().urls),
 ]

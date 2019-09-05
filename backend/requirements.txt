@@ -1,5 +1,5 @@
-Django
+django
 djangorestframework
 pytest
 pytest-django
-#pytest-xdist
+rest_framework

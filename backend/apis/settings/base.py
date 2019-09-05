@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'apis.apps.APIsConfig'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'apis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': ':memory:'
     }
 }
 
@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+DATETIME_FORMAT = 'iso-8601'
 
 USE_I18N = True
 
