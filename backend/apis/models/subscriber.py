@@ -6,6 +6,7 @@ class Subscriber(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=40)
     email = models.EmailField()
+    password = models.CharField(max_length=40)
     created = models.DateTimeField(editable=False)
 
     def save(self, *args, **kwargs):

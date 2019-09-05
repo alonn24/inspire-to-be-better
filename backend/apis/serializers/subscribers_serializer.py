@@ -5,7 +5,5 @@ from apis.models.subscriber import Subscriber
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ['id', 'first_name', 'last_name', 'created', 'email']
+        fields = ['id', 'first_name', 'last_name', 'created', 'email', 'password']
         read_only = ['id', 'created']
-
-
